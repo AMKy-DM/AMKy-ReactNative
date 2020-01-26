@@ -8,7 +8,7 @@ export interface ThemeModel {
 
     progressBarBackgroundColor: string;
     progressBarColor: string;
-    progressBarMinHeight: string;
+    //progressBarMinHeight: string;
 
     downloadList: {
         backgroundColor: string;
@@ -24,8 +24,8 @@ export interface ThemeModel {
         separatorHeight: string;
 
         settingsButton: {
-            width: string;
-            height: string;
+            // width: string;
+            // height: string;
 
             iconWidth: string,
             iconHeight: string,
@@ -43,7 +43,7 @@ export class DarkTheme implements ThemeModel {
     color = '#fff';
 
     progressBarColor = '#0f0';
-    progressBarMinHeight = '15px';
+    //progressBarMinHeight = '15px';
     progressBarBackgroundColor = '#333';
 
     downloadList = {
@@ -53,9 +53,7 @@ export class DarkTheme implements ThemeModel {
         progressColor:'#555',
 
         textStyles: {
-            marginTop: '3px',
-            marginLeft: '20px',
-            marginRight: '20px',
+
         },
 
         textAreaMargins: '5px',
@@ -64,8 +62,6 @@ export class DarkTheme implements ThemeModel {
         separatorHeight: '1px',
 
         settingsButton: {
-            width: '50px',
-            height: '50px',
 
             iconWidth: '30px',
             iconHeight: '30px',

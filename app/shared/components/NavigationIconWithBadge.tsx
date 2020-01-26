@@ -18,7 +18,7 @@ export const NavigationIconWithBadge : FunctionComponent<IconWithBadgeProps> = (
     return (
         <View style={{
             width: (100 / props.colSpan) + '%', height: 24, margin: 5 }}>
-            <FontAwesomeIcon name={name} size={50} color={'white'} icon={props.icon} />
+            <FontAwesomeIcon name={name} size={20} color={'white'} icon={props.icon} />
             {typeof badgeCount === 'number' && badgeCount > 0 && (
                 <View
                     style={{

@@ -40,12 +40,13 @@ export const DownloadEntryListItem: FunctionComponent<DownloadEntryListItemProps
     return (
         <View>
             <View style={{
-                height: 40,
                 display: 'flex',
                 flexDirection: 'row'
             }}>
                 <View style={{
                     flexGrow: 1,
+                    marginTop: theme.downloadList.textAreaMargins,
+                    marginBottom: theme.downloadList.textAreaMargins,
                 }}>
                     <Text style={{
                         color: theme.downloadList.color,
@@ -96,19 +97,18 @@ export const DownloadEntryListItem: FunctionComponent<DownloadEntryListItemProps
                 >
                     <View
                         style={{
-                            // width: theme.downloadList.settingsButton.width,
-                            // height: theme.downloadList.settingsButton.height,
+                            width: theme.downloadList.settingsButton.width,
+                            height: theme.downloadList.settingsButton.height,
                             alignItems: 'center',
                             alignContent: 'center',
                             justifyContent: 'center',
-
                         }}
                     >
                         <FontAwesomeIcon
                             icon={faBars}
                             style={{
-                                // width: theme.downloadList.settingsButton.iconWidth,
-                                // height: theme.downloadList.settingsButton.iconHeight,
+                                width: theme.downloadList.settingsButton.iconWidth,
+                                height: theme.downloadList.settingsButton.iconHeight,
                                 fontSize: theme.downloadList.settingsButton.iconFontSize,
                                 color: theme.downloadList.settingsButton.iconColor,
                                 textAlign: 'center',
@@ -125,6 +125,8 @@ export const DownloadEntryListItem: FunctionComponent<DownloadEntryListItemProps
                 style={{
                     display: 'flex',
                     flexDirection: 'row',
+                    marginTop: theme.downloadList.textAreaMargins,
+                    marginBottom: theme.downloadList.textAreaMargins,
                 }}
             >
                 <Text
@@ -151,7 +153,7 @@ export const DownloadEntryListItem: FunctionComponent<DownloadEntryListItemProps
 
             <View
                 style={{
-                    // height: theme.downloadList.separatorHeight,
+                    height: theme.downloadList.separatorHeight,
                     backgroundColor: theme.downloadList.separatorColor
                 }}
             />

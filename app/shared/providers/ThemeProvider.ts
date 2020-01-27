@@ -8,7 +8,21 @@ export interface ThemeModel {
 
     progressBarBackgroundColor: string;
     progressBarColor: string;
-    //progressBarMinHeight: string;
+    progressBarMinHeight: number;
+
+    navBar: {
+        iconFontSize: number,
+        iconHeight: number,
+        iconMargin: number,
+
+        badgeWidth: number,
+        badgeHeight: number,
+        badgeRadius: number,
+        badgeTop: number,
+        badgeRight: number,
+        badgeColor: string;
+        badgeBackColor: string;
+    },
 
     downloadList: {
         backgroundColor: string;
@@ -18,17 +32,17 @@ export interface ThemeModel {
 
         textStyles: ViewStyle;
 
-        textAreaMargins: string;
+        textAreaMargins: number;
 
         separatorColor: string;
-        separatorHeight: string;
+        separatorHeight: number;
 
         settingsButton: {
-            // width: string;
-            // height: string;
+            width: number;
+            height: number;
 
-            iconWidth: string,
-            iconHeight: string,
+            iconWidth: number,
+            iconHeight: number,
             iconFontSize: string,
             iconColor: string,
             iconHighlightColor: string,
@@ -43,8 +57,22 @@ export class DarkTheme implements ThemeModel {
     color = '#fff';
 
     progressBarColor = '#0f0';
-    //progressBarMinHeight = '15px';
+    progressBarMinHeight = 15;
     progressBarBackgroundColor = '#333';
+
+    navBar = {
+        iconFontSize: 18,
+        iconHeight: 24,
+        iconMargin: 5,
+
+        badgeWidth: 16,
+        badgeHeight: 16,
+        badgeRadius: 10,
+        badgeTop: -5,
+        badgeRight: -15,
+        badgeColor: 'white',
+        badgeBackColor: 'blue',
+    };
 
     downloadList = {
         backgroundColor : this.backgroundColor,
@@ -53,19 +81,23 @@ export class DarkTheme implements ThemeModel {
         progressColor:'#555',
 
         textStyles: {
-
+            marginTop: 3,
+            marginLeft: 20,
+            marginRight: 20,
         },
 
-        textAreaMargins: '5px',
+        textAreaMargins: 5,
 
         separatorColor: '#444',
-        separatorHeight: '1px',
+        separatorHeight: 1,
 
         settingsButton: {
+            width: 70,
+            height: 70,
 
-            iconWidth: '30px',
-            iconHeight: '30px',
-            iconFontSize: '2em',
+            iconWidth: 30,
+            iconHeight: 30,
+            iconFontSize: '3em',
             iconColor: '#fff',
             iconHighlightColor: '#444',
         }

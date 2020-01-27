@@ -1,6 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useContext} from "react";
 import {View, Text, GestureResponderEvent, TouchableWithoutFeedback} from "react-native";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
+import {ThemeModel, ThemeProviderContext} from "../../../app/shared/providers/ThemeProvider";
 
 export interface IconWithBadgeProps {
 
@@ -14,28 +15,37 @@ export interface IconWithBadgeProps {
 
 export const NavigationIconWithBadge : FunctionComponent<IconWithBadgeProps> = (props: IconWithBadgeProps) => {
 
+    const theme = useContext<ThemeModel>(ThemeProviderContext);
+
     const { name, badgeCount } = props;
+
+    const badgeCountStr = typeof badgeCount === 'number' && badgeCount > 0
+        ? (badgeCount > 99 ? `99+` : badgeCount)
+        : undefined;
+
     return (
         <View style={{
-            width: (100 / props.colSpan) + '%', height: 24, margin: 5 }}>
-            <FontAwesomeIcon name={name} size={20} color={'white'} icon={props.icon} />
-            {typeof badgeCount === 'number' && badgeCount > 0 && (
+            width: (100 / props.colSpan) + '%', height: theme.navBar.iconHeight, margin: theme.navBar.iconMargin }}>
+
+            <FontAwesomeIcon name={name} size={theme.navBar.iconFontSize} color={theme.navBar.badgeColor} icon={props.icon} />
+
+            {typeof badgeCountStr !== 'undefined' && (
                 <View
                     style={{
                         // If you're using react-native < 0.57 overflow outside of parent
                         // will not work on Android, see https://git.io/fhLJ8
                         position: 'absolute',
-                        right: -10,
-                        top: -5,
-                        backgroundColor: 'red',
-                        borderRadius: 10,
-                        width: 20,
-                        height: 20,
+                        right: theme.navBar.badgeRight,
+                        top: theme.navBar.badgeTop,
+                        backgroundColor: theme.navBar.badgeBackColor,
+                        borderRadius: theme.navBar.badgeRadius,
+                        width: theme.navBar.badgeWidth,
+                        height: theme.navBar.badgeHeight,
                         justifyContent: 'center',
                         alignItems: 'center',
                     }}
                 >
-                    <Text style={{ color: 'white', fontSize: 10, fontWeight: 'bold' }}>
+                    <Text style={{ color: 'white', fontSize: 8, fontWeight: 'bold' }}>
                         {badgeCount}
                     </Text>
                 </View>

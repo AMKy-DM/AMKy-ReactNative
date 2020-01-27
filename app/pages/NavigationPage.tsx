@@ -3,7 +3,6 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {DownloadsPage} from "./downloads/DownloadsPage";
 import {SettingsPage} from "./settings/SettingsPage";
-import {config} from "@fortawesome/fontawesome-svg-core";
 import {NavigationIconWithBadge} from "../shared/components/NavigationIconWithBadge";
 import {
     faCodeBranch,

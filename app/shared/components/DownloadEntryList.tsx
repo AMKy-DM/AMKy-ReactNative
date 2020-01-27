@@ -13,22 +13,20 @@ export class DownloadEntryList extends Component<DownloadEntryListProps> {
 
     render() {
         return (
-            <SafeAreaView>
-                <FlatList
-                    data={this.props.downloadItems}
-                    renderItem={item => <DownloadEntryListItem key={item.index} item={{
-                        ...item.item,
-                    }} />}
-                    keyExtractor={(item, index) => index + item.downloadItem.uniqueIdentifier}
-                    contentContainerStyle={{
-                        flexGrow: 1
-                    }}
-                    style={{
-                        flex: 1
-                    }}
-                >
-                </FlatList>
-            </SafeAreaView>
+            <FlatList
+                data={this.props.downloadItems}
+                renderItem={item => <DownloadEntryListItem key={item.index} item={{
+                    ...item.item,
+                }} />}
+                keyExtractor={(item, index) => index + item.downloadItem.uniqueIdentifier}
+                contentContainerStyle={{
+                    flexGrow: 1
+                }}
+                style={{
+                    flex: 1
+                }}
+            >
+            </FlatList>
         );
     }
 
